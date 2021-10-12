@@ -1,3 +1,8 @@
 body {
-  background-color: aliceblue;
+  background-color: hsl(208, 100%, 97%);
+  color: aliceblue;
+}
+
+.header {
+  background-color: rgb(204, 32, 89);
 }
