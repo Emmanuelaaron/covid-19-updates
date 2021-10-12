@@ -6,3 +6,7 @@ body {
 .header {
   background-color: rgb(204, 32, 89);
 }
+
+.bodyHeader {
+  background-color: rgb(180, 44, 90);
+}
