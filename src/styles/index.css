@@ -18,3 +18,8 @@ body {
 .agents {
   background-color: rgb(180, 44, 90);
 }
+
+a {
+  text-decoration: none;
+  color: aliceblue;
+}

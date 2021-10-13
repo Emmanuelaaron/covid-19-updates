@@ -9,13 +9,18 @@ const BodyCard = (props) => {
     bodyClass,
     handleClickprops,
     path,
+    count,
   } = props;
 
   return (
     <Card className={bodyClass} style={{ width: '50%', height: '150px' }} onClick={() => handleClickprops()}>
       <Card.Body className="d-flex flex-column justify-content-between align-items-end" style={{ width: '100%' }}>
         <BsArrowRightCircleFill />
-        <Link to={path}>{text}</Link>
+        <Link to={path}>
+          {text}
+          <br />
+          {count}
+        </Link>
       </Card.Body>
     </Card>
   );
@@ -26,6 +31,7 @@ BodyCard.propTypes = {
   bodyClass: PropTypes.string.isRequired,
   handleClickprops: PropTypes.func.isRequired,
   path: PropTypes.string.isRequired,
+  count: PropTypes.number.isRequired,
 };
 
 export default BodyCard;
