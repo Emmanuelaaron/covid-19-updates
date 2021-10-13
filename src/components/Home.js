@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import BodyHeader from './BodyHeader';
 import BodyCard from './BodyCard';
 import { artWorkClick, loadArtworks } from '../redux/artworks/artworks';
+import Lining from './Lining';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -12,12 +13,13 @@ const Home = () => {
   const artWorks = useSelector((state) => state.artworks);
 
   useEffect(() => {
-    if (artWorks.responseData === '') loadArtworksAction();
+    if (artWorks.responseData.length === 0) loadArtworksAction();
     return () => null;
   }, []);
   return (
     <>
       <BodyHeader />
+      <Lining />
       <section className="row">
         <BodyCard text="ArtWorks" count={artWorks.responseData.length} bodyClass="artwork" handleClickprops={artWorkClickAction} path="/details" />
         {/* <BodyCard text="Agents" bodyClass="agents" /

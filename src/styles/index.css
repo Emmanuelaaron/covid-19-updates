@@ -3,7 +3,9 @@ body {
   color: aliceblue;
 }
 
-.header {
+.header,
+.cardDetail:nth-child(even),
+.lining {
   background-color: rgb(204, 32, 89);
 }
 
@@ -15,7 +17,8 @@ body {
   background-color: rgb(204, 32, 89);
 }
 
-.agents {
+.agents,
+.cardDetail:nth-child(odd) {
   background-color: rgb(180, 44, 90);
 }
 

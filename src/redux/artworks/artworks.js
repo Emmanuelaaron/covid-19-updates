@@ -6,7 +6,7 @@ const ART_WORK_CLICK = 'art-work/artwork/ART_WORK_CLICKED';
 
 // reducer
 const initialState = {
-  responseData: '',
+  responseData: [],
   isLoading: false,
   detail: '',
 };

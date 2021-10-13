@@ -1,23 +1,33 @@
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { loadArtworks } from '../redux/artworks/artworks';
 import BodyHeader from './BodyHeader';
+import BodyDetail from './BodyDetail';
+import { loadArtworks } from '../redux/artworks/artworks';
+import Lining from './Lining';
 
 const Detail = () => {
   const dispatch = useDispatch();
   const loadArtworksAction = bindActionCreators(loadArtworks, dispatch);
-  const myartworks = useSelector((state) => state.artworks);
+  const artworks = useSelector((state) => state.artworks);
 
   useEffect(() => {
-    if (myartworks.responseData === '') loadArtworksAction();
+    if (artworks.responseData.length === 0) loadArtworksAction();
     return () => null;
   }, []);
-
   return (
     <>
-      <BodyHeader />
-      <h1>Details</h1>
+      <BodyHeader text="ArtWorks" />
+      <Lining />
+      <section>
+        {artworks.responseData.map((artwork) => (
+          <BodyDetail
+            key={artwork.id}
+            title={artwork.title}
+            mainReferenceNumber={artwork.main_reference_number}
+          />
+        ))}
+      </section>
     </>
   );
 };
