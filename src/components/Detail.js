@@ -4,13 +4,13 @@ import { bindActionCreators } from 'redux';
 import Card from 'react-bootstrap/Card';
 import BodyHeader from './BodyHeader';
 import BodyDetail from './BodyDetail';
-import { loadCountries } from '../redux/artworks/artworks';
+import { loadCountries } from '../redux/countries/countries';
 import Lining from './Lining';
 
 const Detail = () => {
   const dispatch = useDispatch();
   const loadCountriesAction = bindActionCreators(loadCountries, dispatch);
-  const countryObject = useSelector((state) => state.artworks);
+  const countryObject = useSelector((state) => state.countries);
   useEffect(() => {
     if (countryObject.countries.length === 0) loadCountriesAction();
     return () => null;

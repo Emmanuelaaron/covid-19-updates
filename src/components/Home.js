@@ -3,14 +3,14 @@ import { useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import BodyHeader from './BodyHeader';
 import BodyCard from './BodyCard';
-import { countryClicked, loadCountries } from '../redux/artworks/artworks';
+import { countryClicked, loadCountries } from '../redux/countries/countries';
 import Lining from './Lining';
 
 const Home = () => {
   const dispatch = useDispatch();
   const loadCountriesAction = bindActionCreators(loadCountries, dispatch);
   const countryClickedAction = bindActionCreators(countryClicked, dispatch);
-  const countryObject = useSelector((state) => state.artworks);
+  const countryObject = useSelector((state) => state.countries);
   useEffect(() => {
     if (countryObject.countries.length === 0) loadCountriesAction();
     return () => null;
