@@ -13,13 +13,16 @@ const BodyCard = (props) => {
   } = props;
 
   return (
-    <Card className={bodyClass} style={{ width: '50%', height: '150px' }} onClick={() => handleClickprops()}>
+    <Card className={bodyClass} style={{ width: '50%', height: '150px' }} onClick={() => handleClickprops(text)}>
       <Card.Body className="d-flex flex-column justify-content-between align-items-end" style={{ width: '100%' }}>
         <BsArrowRightCircleFill />
         <Link to={path}>
           {text}
           <br />
-          {count}
+          <p className="bg-inf">
+            {count}
+            <span className="ms-1">Confirmed cases</span>
+          </p>
         </Link>
       </Card.Body>
     </Card>

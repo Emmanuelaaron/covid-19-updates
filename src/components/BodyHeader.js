@@ -7,14 +7,14 @@ const BodyHeader = (props) => {
   return (
     <Card className="bodyHeader p-5">
       <Card.Body className="d-flex justify-content-end">
-        {text}
+        <h1><strong>{text}</strong></h1>
       </Card.Body>
     </Card>
   );
 };
 
 BodyHeader.defaultProps = {
-  text: 'Legit Art',
+  text: 'Stay Safe!',
 };
 
 BodyHeader.propTypes = {

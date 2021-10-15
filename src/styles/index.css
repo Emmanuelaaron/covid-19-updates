@@ -25,4 +25,15 @@ body {
 a {
   text-decoration: none;
   color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.blankSection {
+  height: 100%;
+}
+
+.font-size {
+  font-size: 19px;
 }

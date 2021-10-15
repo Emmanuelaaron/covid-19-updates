@@ -3,30 +3,40 @@ import { useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import BodyHeader from './BodyHeader';
 import BodyCard from './BodyCard';
-import { artWorkClick, loadArtworks } from '../redux/artworks/artworks';
+import { countryClicked, loadCountries } from '../redux/artworks/artworks';
 import Lining from './Lining';
 
 const Home = () => {
   const dispatch = useDispatch();
-  const artWorkClickAction = bindActionCreators(artWorkClick, dispatch);
-  const loadArtworksAction = bindActionCreators(loadArtworks, dispatch);
-  const artWorks = useSelector((state) => state.artworks);
-
+  const loadCountriesAction = bindActionCreators(loadCountries, dispatch);
+  const countryClickedAction = bindActionCreators(countryClicked, dispatch);
+  const countryObject = useSelector((state) => state.artworks);
   useEffect(() => {
-    if (artWorks.responseData.length === 0) loadArtworksAction();
+    if (countryObject.countries.length === 0) loadCountriesAction();
     return () => null;
   }, []);
+  const myValues = Object.values(countryObject.countries)[0];
+  const res = myValues !== undefined ? Object.values(myValues) : 'jk';
+  const [firstObject] = res;
+
+  const myCountries = Object.entries(firstObject);
   return (
     <>
       <BodyHeader />
-      <Lining />
+      <Lining text="Covid19 World Statistics" />
       <section className="row">
-        <BodyCard text="ArtWorks" count={artWorks.responseData.length} bodyClass="artwork" handleClickprops={artWorkClickAction} path="/details" />
-        {/* <BodyCard text="Agents" bodyClass="agents" /
-        <BodyCard text="places" bodyClass="agents" />
-        <BodyCard text="galleries" bodyClass="artwork" />
-        <BodyCard text="Exhibitions" bodyClass="artwork" />
-        <BodyCard text="Art-work-types" bodyClass="agents" /> */}
+        {
+          myCountries.map((country) => (
+            <BodyCard
+              key={country[1].id}
+              text={country[0]}
+              bodyClass="artwork"
+              count={country[1].today_confirmed}
+              handleClickprops={countryClickedAction}
+              path="/details"
+            />
+          ))
+        }
       </section>
     </>
   );

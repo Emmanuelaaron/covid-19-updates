@@ -8,7 +8,7 @@ const Header = () => (
       <IoIosArrowBack />
     </div>
     <div className="d-flex align-items-center justify-content-center">
-      <h4>Legit Art</h4>
+      <h1>Covid19 Updates</h1>
     </div>
     <div>
       <FaMicrophone />

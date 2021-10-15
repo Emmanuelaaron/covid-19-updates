@@ -1,37 +1,45 @@
-const URL = 'https://api.artic.edu/api/v1/artworks';
+const URL = 'https://api.covid19tracking.narrativa.com/api/';
 
 // Action
-const LOAD_ART_WORKS = 'art-work/artwork/LOAD_ART_WORK';
-const ART_WORK_CLICK = 'art-work/artwork/ART_WORK_CLICKED';
+const LOAD_DATA = 'world-data/covid/LOAD_DATA';
+const COUNTRY_CLICKED = 'world-data/coivid/COUNTRY_CLICKED/';
 
 // reducer
 const initialState = {
-  responseData: [],
-  isLoading: false,
+  countries: [],
+  totalConfirmed: 0,
   detail: '',
 };
 export default (state = initialState, action) => {
   switch (action.type) {
-    case LOAD_ART_WORKS:
+    case LOAD_DATA:
       return {
         ...state,
-        responseData: action.payload,
+        countries: action.payload,
       };
-    case ART_WORK_CLICK:
+    case COUNTRY_CLICKED:
       return {
         ...state,
-        detail: 'artwork',
+        detail: action.payload,
       };
     default: return state;
   }
 };
 
-export const artWorkClick = () => ({
-  type: ART_WORK_CLICK,
+export const countryClicked = (country) => ({
+  type: COUNTRY_CLICKED,
+  payload: country,
 });
 
-export const loadArtworks = () => async (dispatch) => {
-  const res = await fetch(URL);
+// export const fetchData = async () => {
+//   let response = await fetch(URL);
+//   response = await response.json();
+//   return response;
+// };
+
+export const loadCountries = () => async (dispatch) => {
+  const today = new Date().toISOString().split('T')[0];
+  const res = await fetch(`${URL}${today}`);
   const resJSON = await res.json();
-  dispatch({ type: LOAD_ART_WORKS, payload: resJSON.data });
+  dispatch({ type: LOAD_DATA, payload: resJSON.dates });
 };
