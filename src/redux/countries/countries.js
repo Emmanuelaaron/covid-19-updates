@@ -7,7 +7,6 @@ const COUNTRY_CLICKED = 'world-data/coivid/COUNTRY_CLICKED/';
 // reducer
 const initialState = {
   countries: [],
-  totalConfirmed: 0,
   detail: '',
 };
 export default (state = initialState, action) => {
