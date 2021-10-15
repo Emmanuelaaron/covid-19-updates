@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <>
       <BodyHeader />
-      <Lining text="Covid19 World Statistics" />
+      <Lining text="Covid19 World Statistics" padding="p-2" />
       <section className="row">
         {
           myCountries.map((country) => (

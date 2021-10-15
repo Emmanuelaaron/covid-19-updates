@@ -5,7 +5,7 @@ import { BsArrowRightCircleFill } from 'react-icons/bs';
 const BodyDetail = (props) => {
   const {
     title,
-    mainReferenceNumber,
+    cumulativeCases,
   } = props;
 
   return (
@@ -15,7 +15,7 @@ const BodyDetail = (props) => {
           {title}
         </div>
         <div className="d-flex align-items-cente justify-content-center">
-          {mainReferenceNumber}
+          {cumulativeCases}
           <span className="ms-4"><BsArrowRightCircleFill /></span>
         </div>
 
@@ -26,7 +26,7 @@ const BodyDetail = (props) => {
 
 BodyDetail.propTypes = {
   title: PropTypes.string.isRequired,
-  mainReferenceNumber: PropTypes.string.isRequired,
+  cumulativeCases: PropTypes.string.isRequired,
 };
 
 export default BodyDetail;
