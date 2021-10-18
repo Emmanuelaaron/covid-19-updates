@@ -30,15 +30,11 @@ export const countryClicked = (country) => ({
   payload: country,
 });
 
-// export const fetchData = async () => {
-//   let response = await fetch(URL);
-//   response = await response.json();
-//   return response;
-// };
-
 export const loadCountries = () => async (dispatch) => {
   const today = new Date().toISOString().split('T')[0];
   const res = await fetch(`${URL}${today}`);
   const resJSON = await res.json();
-  dispatch({ type: LOAD_DATA, payload: resJSON.dates });
+  const resObj = Object.values(resJSON.dates);
+  const countrObj = Object.values(resObj);
+  dispatch({ type: LOAD_DATA, payload: Object.entries(countrObj[0].countries) });
 };

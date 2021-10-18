@@ -15,13 +15,8 @@ const Detail = () => {
     if (countryObject.countries.length === 0) loadCountriesAction();
     return () => null;
   }, []);
-  const myValues = Object.values(countryObject.countries)[0];
-  const res = myValues !== undefined ? Object.values(myValues) : 'jk';
-  const [firstObject] = res;
-
-  const myCountries = Object.entries(firstObject);
   const currentCountry = countryObject.detail;
-  const filteredCountry = myCountries.filter((country) => (
+  const filteredCountry = countryObject.countries.filter((country) => (
     country[0] === currentCountry
   ));
   const { regions } = filteredCountry[0][1];

@@ -1,9 +1,11 @@
+/* eslint-disable  no-use-before-define */
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import BodyHeader from './BodyHeader';
 import BodyCard from './BodyCard';
 import { countryClicked, loadCountries } from '../redux/countries/countries';
+import FilterComponent from './Filter';
 import Lining from './Lining';
 
 const Home = () => {
@@ -15,18 +17,18 @@ const Home = () => {
     if (countryObject.countries.length === 0) loadCountriesAction();
     return () => null;
   }, []);
-  const myValues = Object.values(countryObject.countries)[0];
-  const res = myValues !== undefined ? Object.values(myValues) : 'jk';
-  const [firstObject] = res;
 
-  const myCountries = Object.entries(firstObject);
+  const filterCoutries = () => {
+
+  };
   return (
     <>
       <BodyHeader />
       <Lining text="Covid19 World Statistics" padding="p-2" />
+      <FilterComponent setFilter={filterCoutries} />
       <section className="row">
-        {
-          myCountries.map((country) => (
+        { countryObject.countries.length !== 0
+          ? countryObject.countries.map((country) => (
             <BodyCard
               key={country[1].id}
               text={country[0]}
@@ -35,8 +37,7 @@ const Home = () => {
               handleClickprops={countryClickedAction}
               path="/details"
             />
-          ))
-        }
+          )) : <h1>Loading...................</h1>}
       </section>
     </>
   );

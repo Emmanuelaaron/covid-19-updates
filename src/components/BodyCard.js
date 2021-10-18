@@ -29,12 +29,16 @@ const BodyCard = (props) => {
   );
 };
 
+BodyCard.defaultProps = {
+  count: 0,
+};
+
 BodyCard.propTypes = {
   text: PropTypes.string.isRequired,
   bodyClass: PropTypes.string.isRequired,
   handleClickprops: PropTypes.func.isRequired,
   path: PropTypes.string.isRequired,
-  count: PropTypes.number.isRequired,
+  count: PropTypes.number,
 };
 
 export default BodyCard;
