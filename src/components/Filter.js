@@ -1,10 +1,15 @@
-import { PropTypes } from 'prop-types';
 import { InputGroup } from 'react-bootstrap';
 import { FaSearch } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { filterCoutries } from '../redux/countries/countries';
 
-const FilterComponent = (props) => {
+const FilterComponent = () => {
+  const dispatch = useDispatch();
+  const filterCoutriesAction = bindActionCreators(filterCoutries, dispatch);
+
   const filterValues = (e) => {
-    props.setFilter(e.target.value);
+    filterCoutriesAction(e.target.value);
   };
   return (
     <InputGroup className="mb-3">
@@ -21,7 +26,4 @@ const FilterComponent = (props) => {
   );
 };
 
-FilterComponent.propTypes = {
-  setFilter: PropTypes.func.isRequired,
-};
 export default FilterComponent;

@@ -14,21 +14,18 @@ const Home = () => {
   const countryClickedAction = bindActionCreators(countryClicked, dispatch);
   const countryObject = useSelector((state) => state.countries);
   useEffect(() => {
-    if (countryObject.countries.length === 0) loadCountriesAction();
+    if (countryObject.filtererdCountries.length === 0) loadCountriesAction();
     return () => null;
   }, []);
 
-  const filterCoutries = () => {
-
-  };
   return (
     <>
       <BodyHeader />
       <Lining text="Covid19 World Statistics" padding="p-2" />
-      <FilterComponent setFilter={filterCoutries} />
+      <FilterComponent />
       <section className="row">
-        { countryObject.countries.length !== 0
-          ? countryObject.countries.map((country) => (
+        { countryObject.filtererdCountries.length !== 0
+          ? countryObject.filtererdCountries.map((country) => (
             <BodyCard
               key={country[1].id}
               text={country[0]}
@@ -37,7 +34,7 @@ const Home = () => {
               handleClickprops={countryClickedAction}
               path="/details"
             />
-          )) : <h1>Loading...................</h1>}
+          )) : <h1>No Country Found!.................</h1>}
       </section>
     </>
   );

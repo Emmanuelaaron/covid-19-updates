@@ -12,11 +12,11 @@ const Detail = () => {
   const loadCountriesAction = bindActionCreators(loadCountries, dispatch);
   const countryObject = useSelector((state) => state.countries);
   useEffect(() => {
-    if (countryObject.countries.length === 0) loadCountriesAction();
+    if (countryObject.filtererdCountries.length === 0) loadCountriesAction();
     return () => null;
   }, []);
   const currentCountry = countryObject.detail;
-  const filteredCountry = countryObject.countries.filter((country) => (
+  const filteredCountry = countryObject.filtererdCountries.filter((country) => (
     country[0] === currentCountry
   ));
   const { regions } = filteredCountry[0][1];
