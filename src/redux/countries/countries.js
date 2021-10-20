@@ -6,7 +6,7 @@ const COUNTRY_CLICKED = 'world-data/coivid/COUNTRY_CLICKED/';
 const FILTER_COUNTRY = 'world-data/coivid/FILTER_COUNTRY';
 
 // reducer
-const initialState = {
+export const initialState = {
   countries: [],
   filtererdCountries: [],
   detail: '',

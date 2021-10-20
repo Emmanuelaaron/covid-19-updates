@@ -85,47 +85,39 @@ exports[`App component Use Jest snapshots to test the entire App component rende
       </strong>
     </span>
   </div>
+  <div
+    class="mb-3 input-group"
+  >
+    <span
+      class="input-group-text"
+      id="basic-addon1"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 512 512"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+        />
+      </svg>
+    </span>
+    <input
+      class="form-control no-shadow"
+      placeholder="Search Specific Country"
+      type="text"
+    />
+  </div>
   <section
     class="row"
   >
-    <div
-      class="artwork card"
-      style="width: 50%; height: 150px;"
-    >
-      <div
-        class="d-flex flex-column justify-content-between align-items-end card-body"
-        style="width: 100%;"
-      >
-        <svg
-          fill="currentColor"
-          height="1em"
-          stroke="currentColor"
-          stroke-width="0"
-          viewBox="0 0 16 16"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"
-          />
-        </svg>
-        <a
-          href="/details"
-        >
-          0
-          <br />
-          <p
-            class="bg-inf"
-          >
-            <span
-              class="ms-1"
-            >
-              Confirmed cases
-            </span>
-          </p>
-        </a>
-      </div>
-    </div>
+    <h1>
+      No Country Found!.................
+    </h1>
   </section>
 </DocumentFragment>
 `;
