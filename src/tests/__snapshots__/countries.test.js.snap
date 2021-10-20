@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`async actions dispatches LOAD_DATA when fetching countries has been done 1`] = `
+Array [
+  Object {
+    "type": "LOAD_DATA",
+  },
+]
+`;
+
 exports[`country reducer should handle COUNTRY_CLICKED 1`] = `
 Object {
   "countries": Array [],
