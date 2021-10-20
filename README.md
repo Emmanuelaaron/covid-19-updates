@@ -56,6 +56,9 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/Emmanuelaaron/covid-19-updates).
 
+# Acknoledgment
+Great Thanks to [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) for the beautiful design. 
+
 # Show your support
 
 Give a ⭐️ if you like this project!
