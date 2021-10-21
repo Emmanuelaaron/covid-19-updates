@@ -1,0 +1,50 @@
+body {
+  background-color: rgb(204, 32, 89);
+  color: aliceblue;
+}
+
+.header,
+.cardDetail:nth-child(even),
+.lining {
+  background-color: rgb(204, 32, 89);
+}
+
+.bodyHeader {
+  background-color: rgb(180, 44, 90);
+}
+
+.artwork:nth-of-type(3n-1) {
+  background-color: rgb(204, 32, 89);
+}
+
+.artwork:nth-of-type(3n+1) {
+  background-color: rgb(180, 44, 90);
+}
+
+.artwork:nth-child(3n+0) {
+  background-color: rgb(204, 32, 89);
+}
+
+.cardDetail:nth-child(odd) {
+  background-color: rgb(180, 44, 90);
+}
+
+a {
+  text-decoration: none;
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+a:visited {
+  color: aliceblue;
+}
+
+.blankSection {
+  height: 100%;
+}
+
+.font-size {
+  font-size: 19px;
+}
