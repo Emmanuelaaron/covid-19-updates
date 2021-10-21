@@ -1,4 +1,3 @@
-/* eslint-disable  no-use-before-define */
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { bindActionCreators } from 'redux';

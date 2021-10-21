@@ -35,7 +35,6 @@ cd into ```covid-19-updates``` directory
 ```sh 
 $ npm install
 $ npm start
-zz
 ```
 - By now the server should have started and you should be in covid-updates browser
 - To run the tests run the command below
