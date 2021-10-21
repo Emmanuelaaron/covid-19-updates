@@ -30,16 +30,17 @@
 $ git clone https://github.com/Emmanuelaaron/covid-19-updates
 ```
 in your local terminal
-
+cd into ```covid-19-updates``` directory
 - After, run the following commands in your terminal:
 ```sh 
-$ cd covid-19-updates
-$ yarn
-$ yarn start
+$ npm install
+$ npm start
+zz
 ```
+- By now the server should have started and you should be in covid-updates browser
 - To run the tests run the command below
 ```sh
-$ yarn test
+$ npm run test
 ```
 
 # Authors
